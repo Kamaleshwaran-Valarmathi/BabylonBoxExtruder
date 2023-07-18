@@ -46,4 +46,4 @@ Once the server is running, open your web browser and navigate to [http://localh
 - [GUI 2D Library](https://doc.babylonjs.com/how_to/gui) - For creating the user interface.
 
 # License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
