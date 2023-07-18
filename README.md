@@ -32,7 +32,7 @@ Once the server is running, open your web browser and navigate to [http://localh
 
 # How to Use
 - Click on any face of the 3D box to select it. The selected face will be coloured with a blue highlight.
-- With the second click, move the cursor (pointer) to resize the selected face. The box will expand or contract based on the cursor movement.
+- With the second click, hold down the mouse button and move the cursor (pointer) to resize the selected face. As you move the cursor, the box will either expand or contract accordingly.
 - Release the mouse button to complete the resizing action.
 
 # Resetting the Scene
