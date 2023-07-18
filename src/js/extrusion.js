@@ -77,7 +77,7 @@ const extrusion = (scene, box, sideToExtend, extensionAmount) => {
     box.position = extendedPosition;
 
     // Color the box to indicate the extension using the 'doColoring' function
-    doColoring(box, new BABYLON.Color4(255, 255, 0, 1)); // Yellow color is applied to the extended side
+    box = doColoring(box, new BABYLON.Color4(255, 255, 0, 1)); // Yellow color is applied to the extended side
 
     return box; // Return the resized box with the specified side extended or contracted.
 };

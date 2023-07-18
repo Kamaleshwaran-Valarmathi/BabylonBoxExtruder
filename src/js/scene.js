@@ -19,7 +19,7 @@ const createScene = (canvas, engine) => {
   const scene = new BABYLON.Scene(engine);
 
   // Create a camera and position it
-  const camera = new BABYLON.ArcRotateCamera(CAMERA.name, 2.5, 1, 3, BABYLON.Vector3.Zero(), scene);
+  var camera = new BABYLON.ArcRotateCamera(CAMERA.name, 2.5, 1, 3, BABYLON.Vector3.Zero(), scene);
   camera.attachControl(canvas, true);
   camera.lowerRadiusLimit = LOWER_RADIUS_LIMIT; // Set the minimum allowed camera distance from the scene's center
   camera.upperRadiusLimit = UPPER_RADIUS_LIMIT; // Set the maximum allowed camera distance from the scene's center
@@ -38,7 +38,7 @@ const createScene = (canvas, engine) => {
 
   // Register event handlers for pointer interactions with the scene
   scene.onPointerDown = (evt, pickResult) => {
-      initalizeGlobalVariables(camera, box, pickResult);
+    [ camera, box ] = initalizeGlobalVariables(camera, box, pickResult);
   };
 
   scene.onPointerMove = function (evt) {
@@ -46,7 +46,7 @@ const createScene = (canvas, engine) => {
   };
 
   scene.onPointerUp = function () {
-      resetGlobalVariables(camera, box);
+      [ camera, box ] = resetGlobalVariables(camera, box);
   };
 
   // Create an AdvancedDynamicTexture (GUI) to add UI controls on top of the scene
@@ -54,7 +54,9 @@ const createScene = (canvas, engine) => {
 
   // Create and add a reset button to the GUI
   const resetButton = getRestButton();
-  resetButton.onPointerUpObservable.add(() => resetScene(scene, camera, box));
+  resetButton.onPointerUpObservable.add(() => {
+    [ camera, box ] = resetScene(scene, camera, box)
+  });
   advancedTexture.addControl(resetButton);
 
   // Return the created scene
@@ -68,6 +70,7 @@ const createScene = (canvas, engine) => {
  * @param {Scene} scene - The current Babylon.js scene to reset.
  * @param {Camera} camera - The camera of the current scene to reset.
  * @param {Mesh} box - The box which is placed in our scene to reset.
+ * @returns {Array} An array containing the updated camera and box after the reset.
  */
 const resetScene = (scene, camera, box) => {
   // Dispose of the existing box to remove it from the scene
@@ -80,6 +83,9 @@ const resetScene = (scene, camera, box) => {
   camera.alpha = 2.5; // Set the camera's horizontal rotation angle to 2.5 radians
   camera.beta = 1; // Set the camera's vertical rotation angle to 1 radian
   camera.radius = 3; // Set the camera's distance from the scene's center to 3 units
+
+  // Return an array containing the updated camera and box after the reset
+  return [ camera, box ];
 };
 
 

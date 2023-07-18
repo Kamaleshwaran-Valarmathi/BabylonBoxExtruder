@@ -6,6 +6,7 @@ import * as BABYLON from '@babylonjs/core';
  *
  * @param {Mesh} box - The box in which we are going to do the coloring.
  * @param {Color4} curColor - The color that we are going to apply to the selected face.
+ * @returns {Mesh} - The updated box mesh with the applied vertex colors.
  */
 const doColoring = (box, curColor) => {
     // Get the indices and positions of the box
@@ -32,6 +33,8 @@ const doColoring = (box, curColor) => {
 
     // Set the vertex colors of the box based on the updated colors array
     box.setVerticesData(BABYLON.VertexBuffer.ColorKind, colors);
+
+    return box; // Return the updated box mesh with the applied vertex colors
 };
 
 
@@ -39,6 +42,7 @@ const doColoring = (box, curColor) => {
  * Resets the box to its original colorless state by setting all vertex colors to white.
  *
  * @param {Mesh} box - The box that we are going to revert back.
+ * @returns {Mesh} - The updated box mesh with all vertex colors set to white.
  */
 const resetColor = (box) => {
     // Get the positions of the vertices in the box
@@ -52,6 +56,8 @@ const resetColor = (box) => {
 
     // Set the vertex colors of the box to the colorless state
     box.setVerticesData(BABYLON.VertexBuffer.ColorKind, colors);
+
+    return box; // Return the updated box mesh with all vertex colors set to white
 };
 
 

@@ -39,6 +39,7 @@ const calculateWorldCoordinates = (engine, camera, pointerX, pointerY) => {
  * @param {Camera} camera - The camera of the current scene.
  * @param {Mesh} box - The box which is placed in our scene.
  * @param {PickingInfo} pickResult - The result of the cursor click action (picking info).
+ * @returns {Array} - An array containing the updated camera and box after initializing global variables.
  */
 const initalizeGlobalVariables = (camera, box, pickResult) => {
     globalThis.clickCounter += 1;
@@ -52,7 +53,7 @@ const initalizeGlobalVariables = (camera, box, pickResult) => {
 
             // If this is the first click, color the selected face and store it in globalThis.coloredFace
             if (globalThis.clickCounter === 1) {
-                doColoring(box, new BABYLON.Color4(0, 173, 239, 1)); // Color the face with a blue color (RGB: 0, 173, 239, Alpha: 1)
+                box = doColoring(box, new BABYLON.Color4(0, 173, 239, 1)); // Color the face with a blue color (RGB: 0, 173, 239, Alpha: 1)
                 globalThis.coloredFace = globalThis.selectedFace; // Store the selected face in globalThis.coloredFace
             }
 
@@ -62,6 +63,9 @@ const initalizeGlobalVariables = (camera, box, pickResult) => {
             camera.angularSensibilityY = 1000000;
         }
     }
+
+    // Return an array containing the updated camera and box after initializing global variables
+    return [ camera, box ];
 };
 
 
@@ -70,12 +74,13 @@ const initalizeGlobalVariables = (camera, box, pickResult) => {
  *
  * @param {Camera} camera - The camera of the current scene.
  * @param {Mesh} box - The box which is placed in our scene.
+ * @returns {Array} - An array containing the updated camera and box after resetting global variables.
  */
 const resetGlobalVariables = (camera, box) => {
     // Check if two clicks have occurred or if no face was colored yet
     if (globalThis.clickCounter === 2 || globalThis.coloredFace === null) {
         if (globalThis.coloredFace !== null)
-            resetColor(box); // Reset the color of the previously colored face to its original colorless state
+            box = resetColor(box); // Reset the color of the previously colored face to its original colorless state
         globalThis.coloredFace = null; // Reset the coloredFace variable to indicate that no face is currently colored
         globalThis.clickCounter = 0; // Reset the clickCounter to 0 to indicate no clicks have occurred
     }
@@ -86,6 +91,9 @@ const resetGlobalVariables = (camera, box) => {
     camera.panningSensibility = 1000; // Enable camera panning by setting the panning sensitivity to its default value
     camera.angularSensibilityX = 2000; // Enable camera rotation around the X-axis by setting the X-axis rotation sensitivity to its default value
     camera.angularSensibilityY = 2000; // Enable camera rotation around the Y-axis by setting the Y-axis rotation sensitivity to its default value
+
+    // Return an array containing the updated camera and box after resetting global variables
+    return [ camera, box ];
 };
 
 
