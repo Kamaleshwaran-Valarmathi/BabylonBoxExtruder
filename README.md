@@ -42,8 +42,8 @@ Once the server is running, open your web browser and navigate to [http://localh
 - The application is optimized for modern web browsers that support WebGL. It may not work as expected on older browsers.
 
 # Built With
-- Babylon.js - A 3D framework for web development.
-- GUI 2D Library - For creating the user interface.
+- [Babylon.js](https://www.babylonjs.com/) - A 3D framework for web development.
+- [GUI 2D Library](https://doc.babylonjs.com/how_to/gui) - For creating the user interface.
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
