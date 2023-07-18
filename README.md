@@ -21,7 +21,7 @@ git clone https://github.com/your-username/3d-box-resizer.git
 cd 3d-box-resizer
 ```
 
-# Install the dependencies:
+2.  Install the dependencies:
 ```npm install```
 
 # Usage
@@ -31,19 +31,19 @@ To run the application, use the following command:
 Once the server is running, open your web browser and navigate to [http://localhost:5173](http://localhost:5173/) to view the 3D box resizer application.
 
 # How to Use
-* Click on any face of the 3D box to select it. The selected face will be coloured with a blue highlight.
-* Move the cursor (pointer) to resize the selected face. The box will expand or contract based on the cursor movement.
-* Release the mouse button to complete the resizing action.
+- Click on any face of the 3D box to select it. The selected face will be coloured with a blue highlight.
+- Move the cursor (pointer) to resize the selected face. The box will expand or contract based on the cursor movement.
+- Release the mouse button to complete the resizing action.
 
 # Resetting the Scene
-To reset the scene and start over, click on the "Reset" button available in the bottom left corner of the application. This will reset the camera position and remove any resizing effects applied to the box.
+- To reset the scene and start over, click on the "Reset" button available in the bottom left corner of the application. This will reset the camera position and remove any resizing effects applied to the box.
 
 # Limitations
-The application is optimized for modern web browsers that support WebGL. It may not work as expected on older browsers.
+- The application is optimized for modern web browsers that support WebGL. It may not work as expected on older browsers.
 
 # Built With
-Babylon.js - A 3D framework for web development.
-GUI 2D Library - For creating the user interface.
+- Babylon.js - A 3D framework for web development.
+- GUI 2D Library - For creating the user interface.
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
