@@ -26,7 +26,7 @@ cd 3d-box-resizer
 
 # Usage
 To run the application, use the following command:
-```npm start```
+```npm run dev```
 
 Once the server is running, open your web browser and navigate to [http://localhost:5173](http://localhost:5173/) to view the 3D box resizer application.
 
