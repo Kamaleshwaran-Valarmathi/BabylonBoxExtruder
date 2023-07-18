@@ -17,8 +17,8 @@ Follow these instructions to get the project up and running on your local machin
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/3d-box-resizer.git
-cd 3d-box-resizer
+git clone https://github.com/Kamaleshwaran-Valarmathi/BabylonBoxExtruder.git
+cd BabylonBoxExtruder
 ```
 
 2.  Install the dependencies:
