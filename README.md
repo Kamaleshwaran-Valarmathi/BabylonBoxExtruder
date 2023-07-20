@@ -2,7 +2,7 @@
 
 A simple 3D box resizer application built using Babylon.js, a powerful 3D framework for web development. This project allows users to interact with a 3D box, select its faces, and resize them based on cursor movement.
 
-![3D Box Resizer](https://raw.githubusercontent.com/Kamaleshwaran-Valarmathi/BabylonBoxExtruder/main/assets/screenshot.png)
+![3D Box Resizer](assets/screenshot.png)
 
 ## Getting Started
 
